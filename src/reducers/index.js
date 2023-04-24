@@ -3,6 +3,9 @@ import {
   APPLY_NUMBER,
   CHANGE_OPERATION,
   CLEAR_DISPLAY,
+  MEMORY_ADD,
+  MR_ADD,
+  MC_ZERO,
 } from "./../actions";
 
 export const initialState = {
@@ -48,6 +51,21 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         total: 0,
+      };
+    case MEMORY_ADD:
+      return {
+        ...state,
+        memory: state.total,
+      };
+    case MR_ADD:
+      return {
+        ...state,
+        total: state.memory,
+      };
+    case MC_ZERO:
+      return {
+        ...state,
+        memory: 0,
       };
 
     default:

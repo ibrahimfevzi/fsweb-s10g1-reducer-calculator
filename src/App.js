@@ -6,7 +6,9 @@ import CalcButton from "./components/CalcButton";
 import {
   applyNumber,
   changeOperation,
-  addOne,
+  memoryAdd,
+  mrAdd,
+  mcZero,
   clearDisplay,
 } from "./actions/index";
 
@@ -33,9 +35,9 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={"M+"} />
-              <CalcButton value={"MR"} />
-              <CalcButton value={"MC"} />
+              <CalcButton value={"M+"} onClick={() => dispatch(memoryAdd())} />
+              <CalcButton value={"MR"} onClick={() => dispatch(mrAdd())} />
+              <CalcButton value={"MC"} onClick={() => dispatch(mcZero())} />
             </div>
 
             <div className="row">
